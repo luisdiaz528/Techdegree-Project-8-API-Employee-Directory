@@ -51,26 +51,17 @@ function generateModalDetails(data) {
 
 function closeModal() {
   modal.style.display ='none';
-  employeeInfo.style.display ='none';
 }
 
 employeeInfo.addEventListener('click', (e) => {
   modal.style.display = 'block';
 });
 
-window.addEventListener('DOMContentLoaded', (event) => {
-  span.addEventListener('click', closeModal);
+
+modal.addEventListener('click', (event) => {
+  if(event.target.className === 'close') {
+    closeModal();
+  } else if (event.target == modal){
+    closeModal();
+  }
 });
-
-// window.onload is returning null
-
-// window.onload = function() {
-//   span.addEventListener('click', closeModal)
-// };
-
-// window.onload = function(e) {
-//   span.onclick = function(e) {
-//     modal.style.display ='none';
-//   }
-// };
-
