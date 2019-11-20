@@ -13,9 +13,6 @@ fetch(url)
   })
   .catch(error => console.log('Uh oh, something has gone wrong.', error))
 
-  window.addEventListener('DOMContentLoaded', (event) => {
-    span.addEventListener('click', closeModal);
-  });
 
 function generateEmployees(data) {
   for ( let i = 0; i < data.length; i++) {
@@ -36,7 +33,7 @@ function generateModalDetails(data) {
   for ( let i = 0; i < data.length; i++) {
     let html =
    `<div class="modal-content" id="m${[i]}">
-    <span class="close">&times;</span>
+    <span class="close" id="closeBtn">&times;</span>
     <img class="profile-image" src='${data[i].picture.large}' alt='${data[i].name.first} ${data[i].name.last}' />
     <h3>${data[i].name.first} ${data[i].name.last}</h3>
     <p><a href="mailto:${data[i].email}" target="_blank">${data[i].email}</a></p>
@@ -61,3 +58,6 @@ employeeInfo.addEventListener('click', (e) => {
   modal.style.display = 'block';
 });
 
+window.addEventListener('DOMContentLoaded', (event) => {
+  span.addEventListener('click', closeModal);
+});
