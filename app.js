@@ -61,3 +61,16 @@ employeeInfo.addEventListener('click', (e) => {
 window.addEventListener('DOMContentLoaded', (event) => {
   span.addEventListener('click', closeModal);
 });
+
+// window.onload is returning null
+
+// window.onload = function() {
+//   span.addEventListener('click', closeModal)
+// };
+
+// window.onload = function(e) {
+//   span.onclick = function(e) {
+//     modal.style.display ='none';
+//   }
+// };
+
