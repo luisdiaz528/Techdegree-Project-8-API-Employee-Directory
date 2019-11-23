@@ -1,3 +1,51 @@
+
+body {
+  margin: 15px;
+}
+
+.profile-text,
+header h1,
+.search-input {
+  text-align: center;
+  color: rgb(60, 61, 83);
+}
+
+header h1 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search-input {
+  padding-bottom: 35px;
+  margin-left: 55px;
+  display: flex;
+}
+
+input#search {
+  margin-left: 5px;
+}
+
+.card {
+  display: flex;
+  margin: auto;
+  border: 1px solid rgb(163, 152, 230);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 35px;
+  background-color: rgb(231, 230, 230);
+}
+
+.card img.profile-image {
+  border-radius: 50%;
+  display: block;
+  margin-right: 16px;
+}
+
+.email {
+  font-size: 14px;
+}
+
+
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -26,8 +74,14 @@
   .modal-content {
     display: block;
     text-align: center;
-    margin: auto;
-    padding: 20px 80px;
+    margin: 70px auto;
+    padding: 20px 40px;
+    width: 50%;
+    color: rgb(60, 61, 83);
+  }
+
+  .modal-content img.profile-image {
+    border-radius: 50%;
   }
   
   /* The Close Button */
@@ -44,5 +98,75 @@
     text-decoration: none;
     cursor: pointer;
   }
+
+  #person0,
+  #person1,
+  #person2,
+  #person3,
+  #person4,
+  #person5,
+  #person6,
+  #person7,
+  #person8,
+  #person9,
+  #person10,
+  #person11 {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  .card {
+    margin: 0;
+  }
+
+  .card:hover {
+    border: 1px solid rgb(54, 54, 250);
+  }
+
+  .profile-text {
+    text-align: left;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 15px;
+  }
+
+  header h1 {
+    text-align: left;
+    font-size: 20px;
+  }
+
+  .search-input {
+    margin: 14px auto 0px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .search-input {
+    margin-right: 45px;
+  }
+
+  .card img.profile-image {
+    height: 96px;
+    margin-top: 12px;
+  }
+
+}
+
+
+
 
  
