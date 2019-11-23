@@ -98,21 +98,39 @@ modal.addEventListener('click', (event) => {
 });
 
 // Filter search content
-let search = document.querySelector('#search');
-let employee = document.querySelectorAll('.card');
+// let search = document.querySelector('#search');
+// let employee = document.querySelectorAll('.card');
 
-search.addEventListener('keyup', (e) => {
-    for(let i = 0; i < employee.length; i ++ ) {
-      let employeeDetails = document.getElementsByTagName('h3');
-      let name = employeeDetails.textContent;
-        if(employee[i].includes(search.value.toLowerCase()) || search.value.length === 0 || employee[i].includes(name.toLowerCase())) {
-          employee[i].style.display = '';
-        } else {
-          employee[i].style.display = 'none';
-        }
+// search.addEventListener('keyup', (e) => {
+//     for(let i = 0; i < employee.length; i ++ ) {
+//       let employeeDetails = document.getElementsByTagName('h3');
+//       let name = employeeDetails.textContent;
+//         if(employee[i].includes(search.value.toLowerCase()) || search.value.length === 0 || employee[i].includes(name.toLowerCase())) {
+//           employee[i].style.display = '';
+//         } else {
+//           employee[i].style.display = 'none';
+//         }
+//     }
+//     console.log('works');
+// });
+
+const search = document.getElementById('search');
+
+function searchFilter() {
+  let searchValue = search.value.toLowerCase();
+  let employeeCard = document.querySelectorAll(".card");
+  let employeeText = document.querySelectorAll(".profile-text");
+  for (let i = 0; i < employeeCard.length; i++) {
+    let title = employeeText[i].getElementsByTagName("h3")[0];
+    let name = title.textContent;
+    if (name.toLowerCase().indexOf(searchValue) > -1) {
+      employeeCard[i].style.display = "";
+    } else {
+      employeeCard[i].style.display = "none";
     }
-    console.log('works');
-});
+  }
+}
 
+search.addEventListener('keyup', (e) => searchFilter());
 
 
