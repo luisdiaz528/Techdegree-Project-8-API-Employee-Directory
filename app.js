@@ -101,7 +101,9 @@ modal.addEventListener('click', (event) => {
     closeModal();
   } else if (event.target == modal){ 
     closeModal();
-  } 
+  } else if (event.target.className === 'next') {
+    nextArrow();
+  }
 });
 
 // Employee filter search
@@ -122,45 +124,14 @@ function searchFilter() {
 
 search.addEventListener('keyup', (e) => searchFilter());
 
-
-
-// else if(event.target.className === prev) {
-//   // display previous
-//   index --;
-//   modal.children[personIndex].style.display= "block";
-// } else if(event.target.className === next) {
-//   // display next
-//   index ++;
-//   modal.children[personIndex].style.display= "block";
-// }
-
-//Next Button 
-let employeeModal = document.querySelectorAll('.modal-content');
-next.addEventListener('click', (e) => {
-  let index = employeeModal;
-  if(index >= 1) {
-        index--;
-        console.log(index);
-        generateModalDetails(index);
-      }
-      else {
-        console.log(index);
-        generateModalDetails(11);
-      }
-    });
-
-
-
-// Previous Button
-prev.addEventListener('click', () => {
-  let index = employeeModal;
-  if(index >= 1) {
-    index--;
-    console.log(index);
+function nextArrow() {
+  let index = document.querySelector('.modal-content').innerHTML;
+  index++;
+  console.log(index);
+  if(index >= 12) {
+    generateModalDetails(0);
+  }
+  else if(index <= 12) {
     generateModalDetails(index);
   }
-  else {
-    console.log(index);
-    generateModalDetails(11);
-  }
-});
+}
