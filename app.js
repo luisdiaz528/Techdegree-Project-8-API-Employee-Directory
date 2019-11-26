@@ -3,9 +3,7 @@ const container = document.querySelector(".container");
 const modal = document.getElementById('myModal');
 var personIndex;
 const search = document.getElementById('search');
-let index = 0
-const prev = document.querySelectorAll('.prev');
-const next = document.querySelectorAll('.next');
+
 
 
 
@@ -16,7 +14,7 @@ fetch(url)
     generateEmployees(data.results)
     generateModalDetails(data.results)
   })
-  .catch(error => console.log('Uh oh, something has gone wrong.', error))
+  .catch(error => console.log('Uh oh, something has gone wrong.', error));
 
 // Generate Employee cards
 function generateEmployees(data) {
@@ -56,6 +54,7 @@ function generateModalDetails(data) {
   modal.innerHTML += html;
   }
 }
+
 
 // Get Employee card index
 window.addEventListener('load', function () {
@@ -101,8 +100,6 @@ modal.addEventListener('click', (event) => {
     closeModal();
   } else if (event.target == modal){ 
     closeModal();
-  } else if (event.target.className === 'next') {
-    nextArrow();
   }
 });
 
@@ -120,18 +117,26 @@ function searchFilter() {
       employeeCard[i].style.display = "none";
     }
   }
-}
+};
 
 search.addEventListener('keyup', (e) => searchFilter());
 
-function nextArrow() {
-  let index = document.querySelector('.modal-content').innerHTML;
-  index++;
-  console.log(index);
-  if(index >= 12) {
-    generateModalDetails(0);
-  }
-  else if(index <= 12) {
-    generateModalDetails(index);
-  }
-}
+// let index = 0
+// const prev = document.querySelectorAll('.prev');
+// const next = document.querySelectorAll('.next');
+// function nextArrow() {
+//   let employee = document.querySelectorAll('.modal-content')
+//   for(i=0; i < employee.length; i++) {
+//     let index = employee;
+//   index++;
+//   console.log(index);
+//   if(index >= 12) {
+//     generateModalDetails(0);
+//   }
+//   else if(index <= 12) {
+//     generateModalDetails(data);
+//   }
+//   }
+//   modal.children[index].style.display= "block";
+// }
+
