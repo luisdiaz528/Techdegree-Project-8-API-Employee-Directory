@@ -1,0 +1,13 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.jumbotron {
+    background-image: url('images/atl.jpg');
+    background-size: cover;
+}
+
+.jumbotron h1, .jumbotron p {
+    text-shadow: 1px 1px 14px black;
+    font-weight: bold;
+}
