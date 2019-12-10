@@ -38,9 +38,7 @@ function generateModalDetails(data) {
     let html =
    `<div class="modal-content" id="person${[i]}">
     <span class="close">&times;</span>
-    <span class="prev"><</span>
     <img class="profile-image" src='${data[i].picture.large}' alt='${data[i].name.first} ${data[i].name.last}' />
-    <span class="next">></span>
     <h3>${data[i].name.first} ${data[i].name.last}</h3>
     <p><a href="mailto:${data[i].email}" target="_blank">${data[i].email}</a></p>
     <p>${data[i].location.city}</p>
@@ -121,22 +119,4 @@ function searchFilter() {
 
 search.addEventListener('keyup', (e) => searchFilter());
 
-// let index = 0
-// const prev = document.querySelectorAll('.prev');
-// const next = document.querySelectorAll('.next');
-// function nextArrow() {
-//   let employee = document.querySelectorAll('.modal-content')
-//   for(i=0; i < employee.length; i++) {
-//     let index = employee;
-//   index++;
-//   console.log(index);
-//   if(index >= 12) {
-//     generateModalDetails(0);
-//   }
-//   else if(index <= 12) {
-//     generateModalDetails(data);
-//   }
-//   }
-//   modal.children[index].style.display= "block";
-// }
 
