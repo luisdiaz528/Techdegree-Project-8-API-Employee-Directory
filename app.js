@@ -5,8 +5,6 @@ var personIndex;
 const search = document.getElementById('search');
 
 
-
-
 // fetch data
 fetch(url)
   .then(response => response.json())
@@ -17,7 +15,7 @@ fetch(url)
   .catch(error => console.log('Uh oh, something has gone wrong.', error));
 
 // Generate Employee cards
-function generateEmployees(data) {
+function generateEmployees(data) { 
   for ( let i = 0; i < data.length; i++) {
   let html =
   `<div class="card" id="${[i]}">
@@ -38,9 +36,7 @@ function generateModalDetails(data) {
     let html =
    `<div class="modal-content" id="person${[i]}">
     <span class="close">&times;</span>
-    <span class="prev"><</span>
     <img class="profile-image" src='${data[i].picture.large}' alt='${data[i].name.first} ${data[i].name.last}' />
-    <span class="next">></span>
     <h3>${data[i].name.first} ${data[i].name.last}</h3>
     <p><a href="mailto:${data[i].email}" target="_blank">${data[i].email}</a></p>
     <p>${data[i].location.city}</p>
